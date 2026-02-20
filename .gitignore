@@ -6,6 +6,7 @@ _site/
 # Ruby
 .bundle/
 vendor/
+Gemfile.lock
 
 # Node 模块
 node_modules/
