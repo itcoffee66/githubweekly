@@ -8,8 +8,6 @@
 
 GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频版本，搜：IT咖啡馆   
 
-> 🏗️ 本站基于 [Jekyll](https://jekyllrb.com/) + [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题构建，通过 GitHub Actions 自动部署。
-
 ### 往期内容
 
 - 第103期：[4000行代码的openclaw能用吗](_weekly/103.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/103.html)
