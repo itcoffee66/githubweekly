@@ -28,4 +28,4 @@ B站、YouTube同步发布视频版本，搜：**IT咖啡馆**
 
 使用 RSS 订阅软件可以快速知道本周 GitHub 热点项目
 
-订阅地址：[rss.xml]({{ '/rss.xml' | relative_url }})
+订阅地址：[feed.xml]({{ '/feed.xml' | relative_url }})

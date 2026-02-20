@@ -81,7 +81,7 @@ collections:
   weekly:
     output: true
     sort_by: date
-    permalink: /asset/html/:name.html
+    permalink: /:name.html
   tabs:
     output: true
     sort_by: order
