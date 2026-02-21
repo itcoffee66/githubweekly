@@ -1,0 +1,151 @@
+# ---------------------------------------------------------------------------
+# 站点基本配置 - Jekyll & Chirpy 主题
+# ---------------------------------------------------------------------------
+
+# 导入 Chirpy 主题
+theme: jekyll-theme-chirpy
+
+# 网页语言（对应 _data/locales/ 下的翻译文件）
+# http://www.lingoes.net/en/translator/langcode.htm
+lang: zh-CN
+
+# 时区设置 https://zones.arilyn.cc
+timezone: Asia/Shanghai
+
+# ---------------------------------------------------------------------------
+# jekyll-seo-tag 设置
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ---------------------------------------------------------------------------
+
+title: Github Weekly        # 站点标题
+tagline: "IT咖啡馆的GitHub每周热点"           # 副标题/标语
+description: >-                         # SEO 描述 & Atom Feed 描述
+  每周分享GitHub热门开源项目，涵盖AI、开发工具、框架等领域。
+  B站、YouTube同步发布视频版本，搜：IT咖啡馆
+
+# 站点 URL（不以 / 结尾）
+url: "https://itcoffee66.github.io"
+
+# 项目站点的 baseurl（以 / 开头，不以 / 结尾）
+baseurl: "/githubweekly"
+
+github:
+  username: itcoffee66
+
+social:
+  name: IT咖啡馆
+  links:
+    - https://github.com/itcoffee66
+    - https://space.bilibili.com/  # 替换为实际 B 站主页
+
+# ---------------------------------------------------------------------------
+# 站点外观与功能
+# ---------------------------------------------------------------------------
+
+# 站点图标（侧边栏头像）
+avatar: "/asset/it-coffee-circle.png"
+
+# 文章目录（TOC）全局开关
+toc: true
+
+# 评论系统（暂不开启，后续可配置 giscus 等）
+comments:
+  provider:  # [disqus | utterances | giscus]
+
+# ---------------------------------------------------------------------------
+# 自托管静态资源
+# ---------------------------------------------------------------------------
+# assets:
+#   self_host:
+#     enabled: false
+
+# PWA 配置
+pwa:
+  enabled: false
+
+# 分页：每页显示文章数
+paginate: 10
+
+# ---------------------------------------------------------------------------
+# 订阅源配置
+# 使用仓库根目录的 rss.xml 静态文件，不由 Jekyll 生成
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# 集合、永久链接与默认值
+# ---------------------------------------------------------------------------
+
+# 使用 Jekyll Collection 而非 _posts，以保留原始文件名（96.md, 97.md, ...）
+# _weekly/ 目录中的 md 文件会被输出为 /asset/html/96.html 等
+collections:
+  weekly:
+    output: true
+    sort_by: date
+    permalink: /:name.html
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: weekly
+    values:
+      layout: post
+      comments: true
+      toc: true
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+# ---------------------------------------------------------------------------
+# Sass & HTML 压缩
+# ---------------------------------------------------------------------------
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+# ---------------------------------------------------------------------------
+# 排除文件（不参与 Jekyll 构建）
+# ---------------------------------------------------------------------------
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - scripts/
+  - post/               # 原始 Markdown 源文件（保留供 GitHub 浏览）
+  - asset/html/          # 旧的 Python 脚本生成的 HTML（由 Jekyll 重新生成）
+  # - rss.xml            # 保留根目录 rss.xml 作为静态文件输出
+  - node_modules/
+  - vendor/
+  - Gemfile.lock
+  - LICENSE
+  - "*.config.js"
+
+# ---------------------------------------------------------------------------
+# Kramdown Markdown 处理器
+# ---------------------------------------------------------------------------
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
