@@ -5,7 +5,7 @@
     <link>https://itcoffee66.github.io/githubweekly</link>
     <description>github 每周热点项目</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 14 Feb 2026 15:16:51 GMT</pubDate>
+    <pubDate>Fri, 27 Feb 2026 17:46:16 GMT</pubDate>
     <image>
       <url>https://itcoffee66.github.io/githubweekly/asset/it-coffee-circle.png</url>
       <title>IT咖啡馆的github每周热点项目</title>
@@ -13,6 +13,13 @@
       <width>144</width>
       <height>144</height>
     </image>
+    <item>
+      <title>GitHub一周热点第104期</title>
+      <link>https://itcoffee66.github.io/githubweekly/asset/html/104.html</link>
+      <description>智谱新一代旗舰模型、AI 编码助手配置管理器、AI 渗透测试工具、安全Python 解释器和深度金融研究智能体</description>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://itcoffee66.github.io/githubweekly/asset/html/104.html</guid>
+    </item>
     <item>
       <title>GitHub一周热点第102期</title>
       <link>https://itcoffee66.github.io/githubweekly/asset/html/102.html</link>
