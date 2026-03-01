@@ -1,0 +1,30 @@
+# -------------------------
+# 联系方式配置
+# 侧边栏底部显示的社交链接图标
+# -------------------------
+
+- type: github
+  icon: "fab fa-github"
+  url: "https://github.com/itcoffee66"
+
+- type: bilibili
+  icon: "fab fa-bilibili"
+  url: "https://space.bilibili.com/65564239"  # 请替换为实际 B 站主页
+
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@it-coffee"
+
+# - type: twitter
+#   icon: "fab fa-x-twitter"
+#   url: ""
+
+# - type: email
+#   icon: "fas fa-envelope"
+#   noblank: true
+#   url: "mailto:your-email@example.com"
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
+  url: "/feed.xml"
