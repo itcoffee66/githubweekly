@@ -8,8 +8,9 @@
 
 GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频版本，搜：IT咖啡馆   
 
-### 往期内容
 
+### 往期内容
+- 第104期：[智谱GLM-5发布，打响春节AI大战模型第一枪](_weekly/104.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/104.html)
 - 第103期：[4000行代码的openclaw能用吗](_weekly/103.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/103.html)
 - 第102期：[全球爆火的AI助理真的那么好用吗？](_weekly/102.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/102.html)
 - 第101期：[IT咖啡馆的Github一周热点上线了](_weekly/101.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/101.html)
@@ -24,5 +25,6 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 使用 RSS 订阅软件可以快速知道本周 GitHub 热点项目
 
 订阅地址：[https://itcoffee66.github.io/githubweekly/feed.xml](https://itcoffee66.github.io/githubweekly/feed.xml)
+
 
 

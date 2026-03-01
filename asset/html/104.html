@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub一周热点第104期</title>
+    <meta name="description" content="智谱新一代旗舰模型、AI 编码助手配置管理器、AI 渗透测试工具、安全Python 解释器和深度金融研究智能体">
+    
+    <style>
+        body { max-width: 800px; margin: 20px auto; padding: 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .code-block { background: #f5f5f5; padding: 10px; border-radius: 4px; font-family: monospace; overflow-x: auto; }
+        table { border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 6px 12px; }
+        th { background: #f0f0f0; }
+        h1, h2, h3 { margin: 15px 0 5px; color: #2c3e50; }
+        p { line-height: 1.6; margin: 8px 0; color: #34495e; }
+        ul, ol { margin: 8px 0 8px 20px; color: #34495e; }
+        img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; }
+        .post-meta { color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+    </style>
+
+</head>
+<body>
+    <h1>GitHub一周热点第104期</h1>
+    <div class="post-meta">发布时间：2026-02-14</div>
+    <h2>视频</h2>
+<p><a href="https://www.bilibili.com/video/BV1e7ZJBREu8/">本期视频链接</a></p>
+<p>GitHub 一周热点第104期(2025/2/8 - 2026/2/14），本期内容包括智谱新一代旗舰模型、AI 编码助手配置管理器、AI 渗透测试工具、安全Python 解释器和深度金融研究智能体。<br />
+最后还有 2 份资料分享。<br />
+那马上就要春节了，也提前祝大家新年快乐，马到成功，马上有钱。那话不多说，我们进入正式内容。<br />
+如果觉得内容不错，别忘了点赞关注支持一下。</p>
+<h2>1. GLM-5</h2>
+<ul>
+<li>项目名称：GLM-5 – 智谱新一代旗舰模型</li>
+<li>官网链接：https://github.com/zai-org/GLM-5<br />
+目前来看2026年的春节注定是一场AI大战，前面元宝发红包，千问送奶茶。而打响模型大战第一枪的就是智谱，他发布了新一代的旗舰模型GLM-5。<br />
+GLM5 这一次的核心口号是，从会写代码走到会完成任务，其实今天的几个模型发布，都在不断的强调一点，就是从代码到工程，都希望可以端到端的去完成完整的应用开发。所以大家都在强化编程能力和agent能力。<br />
+官方发布的几个视频看起来效果非常不错，像学术版的tiktok，还有可以联机对战的大富翁游戏，当然官方展示效果大家都懂的。<br />
+再稍微来看一下GLM5的基本参数情况，744B总参数，40B的激活参数，使用了28.5T的预训练数据。DeepSeek 同款的稀疏注意力机制，集成DSA技术让它在保持长上下文能力的同时大幅降低推理成本。能力基本和Claude Opus 4.5一致，目前是开源模型的第一。<br />
+有没有觉得这一段不是我视频的风格，这是GLM5自己生成的介绍。而且这里我还引入一个对比，就是几乎和GLM-5同步发布的minimax-m2.5，我用Claude code同样的提示词，来看一下输出的效果。</li>
+</ul>
+<p>你觉得谁表现好？当然我这个视频并不是深度测评，大家看一乐就好，我也没有做得很专业。<br />
+说实话，智谱和minimax上市确实不白上，这上市以后更新速度的提升也是立竿见影的。当然友好也有坏，虽然现在模型能力更好了，但是价格也都上去了，我看了下，之前我开GLM coding plan的时候还是800多，而现在已经1200多了。顺便提一句如果有朋友想买，可以用我的邀请码，我可以得返现。<br />
+最后作为开原模型，这一次GLM5在本地运行方面是非常不友好的，lm studio里最小的GGUF也要176G，我还是算了。有实力的朋友请自行体验。</p>
+<h2>2. cc-switch</h2>
+<ul>
+<li>项目名称：cc-switch –  AI 编码助手配置管理器</li>
+<li>官网链接：https://github.com/farion1231/cc-switch<br />
+CC-Switch 是一个开源的 跨平台桌面应用程序，专注于为各种 AI 编码助手提供统一、可视化的配置与管理入口。一开始是给Claude code做的，后来逐渐扩大支持了各种常见的AI coding 工具，像codex ，gemini cli。<br />
+它解决了传统靠手动编辑配置文件来切换 API key、模型、MCP server 等参数的繁琐流程，让开发者通过一个界面就能切换、备份与管理所有相关设置。<br />
+现在如果真的是vibecoding的重度用户，那你肯定是不能光用一个模型的coding plan，因为基本是不够用的，而如果你多开了几个以后，那CC-Switch就确实蛮实用的。<br />
+使用上的话，比如像我是Mac直接通过brew可以安装和使用，它做了界面，这对于动手能力不强的非专业人群来说友好很多，尤其是非程序员的vibecoding爱好者。<br />
+另外看他项目页面的各种赞助也能感受到，项目得到了用户和甲方爸爸的双重认可。所以很多时候真的是把一个实用的小东西做好了，就可以获得非常不错的效果和收益。</li>
+</ul>
+<h2>3. shannon</h2>
+<ul>
+<li>项目名称：shannon – AI 渗透测试工具</li>
+<li>GitHub 链接：https://github.com/KeygraphHQ/shannon<br />
+Shannon 是一个开源的 全自动 AI 渗透测试工具，核心目标是自主发现并验证Web应用的可利用漏洞，填补日常开发与年度渗透测试之间的安全缺口，它不单是扫描漏洞列表，还会像人类红队工程师一样分析代码/运行环境，并且去实际做爆破，验证漏洞是否真实。它就像招了个全年无休的红队黑客，24小时在线帮你去挖洞。<br />
+它将白盒源代码分析与黑盒动态利用相结合，分为四个不同的阶段，由不同的agent去执行：</li>
+<li>源码感知分析（白盒检测）</li>
+<li>自动化浏览器驱动攻击验证</li>
+<li>多阶段攻击流程（侦查 → 漏洞分析 → 利用）</li>
+<li>并行执行与报告生成<br />
+使用的话，可以直接克隆项目到本地，然后执行项目的脚本，它会自动完成相关docker下载，注意要准备好自己的大模型key，要注意他现在不支持baseurl，所以只能用Claude或者openai，再就是用openrouter，另外这类工具还是很费token的。</li>
+</ul>
+<hr />
+<h2>4. monty</h2>
+<ul>
+<li>项目名称：monty –  安全Python 解释器</li>
+<li>GitHub 链接：https://github.com/pydantic/monty<br />
+Monty 是由 Pydantic 团队用 Rust 编写的一个极简、安全的 Python 解释器实现，专门为 AI 系统（尤其是智能体／agent）嵌入式代码执行场景设计。它的目标不是替代完整的 CPython，而是提供一个高速、安全、受控的环境，让 AI 生成的 Python 代码可以在内部安全运行，而不必暴露宿主系统的文件系统、网络或其它敏感资源。<br />
+核心特性包括了安全沙箱、极致启动速度、受控执行子集和多语言绑定。<br />
+在智能体/Agent 场景中，经常有以下需求：</li>
+<li>执行模型生成的脚本（例如分析数据、操作结构体等），</li>
+<li>在运行时动态调整行为（生成并执行逻辑片段），</li>
+<li>保证安全性（代码不应能任意读写磁盘或网络），<br />
+传统方式是启动完整的 Python（CPython）或容器沙箱，但这要么带来安全隐患，要么启动/通信开销大且复杂。Monty 的设计正是为了在这一类场景下提供一个更轻、更安全、更易嵌入的执行引擎</li>
+</ul>
+<hr />
+<h2>5. dexter</h2>
+<ul>
+<li>项目名称：dexter – 深度金融研究智能体</li>
+<li>GitHub 链接：https://github.com/virattt/dexter<br />
+Dexter 是一个开源的 自治智能体（Autonomous Agent），专门面向深度金融研究与自动化分析构建。它能把复杂的财务问题转换成结构化研究计划 → 自动数据获取 → 分析与验证 → 可信结论输出的完整任务流，而不是只给出一段简单回答。整个流程强调“先思考再行动 + 自我检验结果可信度”，这在传统的金融分析自动化工具里较为罕见。<br />
+Dexter能像一个真正的量化研究员 / 金融分析师那样：</li>
+<li>理解复杂金融查询</li>
+<li>分解成可执行的研究步骤</li>
+<li>抓取实时市场数据 &amp; 报表信息</li>
+<li>检验结果的可靠性并修正</li>
+<li>输出结构化、可复用的分析结果<br />
+项目需要使用到，需要先安装，可以使用一键脚本去安装。<br />
+之后把项目克隆到本地，然后执行bun install，接下来再把env.example 复制成.env，再去里面做一些配置，主要就是大模型的key，还有各种使用到的数据API key。<br />
+配置好了就bun start。<br />
+但是它用的dataset是要收费的还挺贵的，所以我感觉上手有点费劲。</li>
+</ul>
+<hr />
+<p>one more thing<br />
+最后还是分享2个资料，第一份是《理解机器学习：从理论到算法》，最近好像很久没给大家分享点很干的书，本书对机器学习的基本思想以及将这些原理转化为实用算法的数学推导进行了全面的理论阐述，想多了解点底层知识的可以去学习。<br />
+第二个是《全球AI应用平台市场全景图与趋势洞察报告》，从去年开始AI行业的关注核心点就在逐步的迁移，从模型更多的转向agent和应用，所以后续AI应用平台肯定也会卷的越来越厉害，这个方向也可以多做关注。<br />
+有需要的可以告诉我，以上就是本周的全部内容，那我们下次再见。</p>
+<p>104期分享内容：<br />
+我用夸克网盘给你分享了「一周热点104期」，链接：https://pan.quark.cn/s/8c3e9f3d6ef1</p>
+</body>
+</html>
