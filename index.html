@@ -6,13 +6,9 @@ layout: default
 <!-- 排序选项栏 -->
 <div class="d-flex gap-2 align-items-center">
     <small class="text-muted">排序：</small>
-    <div class="btn-group btn-group-sm" role="group">
-        <input type="radio" class="btn-check" name="sort-option" id="sort-newest" value="newest" autocomplete="off">
-        <label class="btn btn-outline-secondary" for="sort-newest">最新</label>
-
-        <input type="radio" class="btn-check" name="sort-option" id="sort-oldest" value="oldest" autocomplete="off"
-            checked>
-        <label class="btn btn-outline-secondary" for="sort-oldest">最早</label>
+    <div class="btn-group btn-group-sm" role="group" aria-label="排序方式">
+        <button type="button" class="btn btn-outline-secondary sort-btn" data-sort="newest" aria-pressed="false">最新</button>
+        <button type="button" class="btn btn-outline-secondary sort-btn" data-sort="oldest" aria-pressed="true">最早</button>
     </div>
 </div>
 
@@ -43,23 +39,48 @@ layout: default
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const postList = document.getElementById('post-list');
-        const sortOptions = document.querySelectorAll('input[name="sort-option"]');
+        const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
+        const STORAGE_KEY = 'githubweekly-sort';
 
-        sortOptions.forEach(option => {
-            option.addEventListener('change', function () {
-                const sortType = this.value;
-                const articles = Array.from(postList.querySelectorAll('article'));
+        function setActiveButton(sortType) {
+            sortButtons.forEach(btn => {
+                const isActive = btn.dataset.sort === sortType;
+                if (isActive) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                } else {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                }
+            });
+        }
 
-                articles.sort((a, b) => {
-                    const dateA = parseInt(a.dataset.date);
-                    const dateB = parseInt(b.dataset.date);
-                    return sortType === 'newest' ? dateB - dateA : dateA - dateB;
-                });
+        function applySort(sortType) {
+            const articles = Array.from(postList.querySelectorAll('article'));
+            articles.sort((a, b) => {
+                const dateA = parseInt(a.dataset.date, 10);
+                const dateB = parseInt(b.dataset.date, 10);
+                return sortType === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+            // 重新排列 DOM 元素（使用 DocumentFragment 减少重排）
+            const frag = document.createDocumentFragment();
+            articles.forEach(article => frag.appendChild(article));
+            postList.appendChild(frag);
+        }
 
-                // 重新排列 DOM 元素
-                articles.forEach(article => {
-                    postList.appendChild(article);
-                });
+        // 初始化：优先使用 localStorage，否则默认按最早排序
+        const saved = localStorage.getItem(STORAGE_KEY);
+        const initialValue = saved || 'oldest';
+        setActiveButton(initialValue);
+        applySort(initialValue);
+
+        sortButtons.forEach(btn => {
+            btn.setAttribute('aria-controls', 'post-list');
+            btn.addEventListener('click', function () {
+                const sortType = this.dataset.sort;
+                localStorage.setItem(STORAGE_KEY, sortType);
+                applySort(sortType);
+                setActiveButton(sortType);
             });
         });
     });
