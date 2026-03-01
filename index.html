@@ -103,8 +103,10 @@ layout: default
                 const dateB = parseInt(b.dataset.date, 10);
                 const dateDiff = sortType === 'newest' ? dateB - dateA : dateA - dateB;
                 if (dateDiff !== 0) return dateDiff;
-                const linkA = a.querySelector('a')?.getAttribute('href') || '';
-                const linkB = b.querySelector('a')?.getAttribute('href') || '';
+                const anchorA = a.querySelector('a');
+                const anchorB = b.querySelector('a');
+                const linkA = anchorA ? (anchorA.getAttribute('href') || '') : '';
+                const linkB = anchorB ? (anchorB.getAttribute('href') || '') : '';
                 return sortType === 'newest' ? linkB.localeCompare(linkA) : linkA.localeCompare(linkB);
             });
             const frag = document.createDocumentFragment();
