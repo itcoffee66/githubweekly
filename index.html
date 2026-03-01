@@ -4,7 +4,24 @@ layout: default
 ---
 
 <!-- 排序选项栏 -->
-<div class="d-flex gap-2 align-items-center">
+<style>
+    .sort-toolbar {
+        margin-bottom: 0.75rem;
+    }
+
+    .sort-btn {
+        min-width: 3.75rem;
+    }
+
+    .sort-btn.active,
+    .sort-btn[aria-pressed="true"] {
+        color: var(--bs-white);
+        background-color: var(--bs-secondary);
+        border-color: var(--bs-secondary);
+    }
+</style>
+
+<div class="d-flex gap-2 align-items-center sort-toolbar" id="sort-toolbar">
     <small class="text-muted">排序：</small>
     <div class="btn-group btn-group-sm" role="group" aria-label="排序方式">
         <button type="button" class="btn btn-outline-secondary sort-btn" data-sort="newest" aria-pressed="false">最新</button>
@@ -37,10 +54,35 @@ layout: default
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    function initSortToolbar() {
+        const toolbar = document.getElementById('sort-toolbar');
+        if (!toolbar || toolbar.dataset.bound === '1') {
+            return;
+        }
+        toolbar.dataset.bound = '1';
+
         const postList = document.getElementById('post-list');
-        const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
+        const sortButtons = Array.from(toolbar.querySelectorAll('.sort-btn'));
         const STORAGE_KEY = 'githubweekly-sort';
+        if (!postList || sortButtons.length === 0) {
+            return;
+        }
+
+        function safeGetSort() {
+            try {
+                return window.localStorage.getItem(STORAGE_KEY);
+            } catch (err) {
+                return null;
+            }
+        }
+
+        function safeSetSort(value) {
+            try {
+                window.localStorage.setItem(STORAGE_KEY, value);
+            } catch (err) {
+                // localStorage 在某些隐私模式下不可用，忽略即可
+            }
+        }
 
         function setActiveButton(sortType) {
             sortButtons.forEach(btn => {
@@ -60,7 +102,12 @@ layout: default
             articles.sort((a, b) => {
                 const dateA = parseInt(a.dataset.date, 10);
                 const dateB = parseInt(b.dataset.date, 10);
-                return sortType === 'newest' ? dateB - dateA : dateA - dateB;
+                const dateDiff = sortType === 'newest' ? dateB - dateA : dateA - dateB;
+                if (dateDiff !== 0) return dateDiff;
+                // 同日期时用链接做次级排序，保证顺序稳定
+                const linkA = a.querySelector('a')?.getAttribute('href') || '';
+                const linkB = b.querySelector('a')?.getAttribute('href') || '';
+                return sortType === 'newest' ? linkB.localeCompare(linkA) : linkA.localeCompare(linkB);
             });
             // 重新排列 DOM 元素（使用 DocumentFragment 减少重排）
             const frag = document.createDocumentFragment();
@@ -69,7 +116,7 @@ layout: default
         }
 
         // 初始化：优先使用 localStorage，否则默认按最早排序
-        const saved = localStorage.getItem(STORAGE_KEY);
+        const saved = safeGetSort();
         const initialValue = saved || 'oldest';
         setActiveButton(initialValue);
         applySort(initialValue);
@@ -78,10 +125,18 @@ layout: default
             btn.setAttribute('aria-controls', 'post-list');
             btn.addEventListener('click', function () {
                 const sortType = this.dataset.sort;
-                localStorage.setItem(STORAGE_KEY, sortType);
+                safeSetSort(sortType);
                 applySort(sortType);
                 setActiveButton(sortType);
             });
         });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSortToolbar);
+    } else {
+        initSortToolbar();
+    }
+
+    window.addEventListener('pageshow', initSortToolbar);
 </script>
