@@ -44,22 +44,69 @@ layout: default
     document.addEventListener('DOMContentLoaded', function () {
         const postList = document.getElementById('post-list');
         const sortOptions = document.querySelectorAll('input[name="sort-option"]');
+        const labels = Array.from(document.querySelectorAll('.btn-group label'));
+        const STORAGE_KEY = 'githubweekly-sort';
+
+        function setActiveLabel(id) {
+            labels.forEach(lbl => {
+                if (lbl.getAttribute('for') === id) {
+                    lbl.classList.add('active');
+                    lbl.setAttribute('aria-pressed', 'true');
+                } else {
+                    lbl.classList.remove('active');
+                    lbl.setAttribute('aria-pressed', 'false');
+                }
+            });
+        }
+
+        function applySort(sortType) {
+            const articles = Array.from(postList.querySelectorAll('article'));
+            articles.sort((a, b) => {
+                const dateA = parseInt(a.dataset.date, 10);
+                const dateB = parseInt(b.dataset.date, 10);
+                return sortType === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+            // 重新排列 DOM 元素（使用 DocumentFragment 减少重排）
+            const frag = document.createDocumentFragment();
+            articles.forEach(article => frag.appendChild(article));
+            postList.appendChild(frag);
+        }
+
+        // 初始化：优先使用 localStorage，其次读取当前被选中的 radio
+        const saved = localStorage.getItem(STORAGE_KEY);
+        const initialValue = saved || (document.querySelector('input[name="sort-option"]:checked')?.value) || 'oldest';
+        const initialInput = document.querySelector(`input[name="sort-option"][value="${initialValue}"]`);
+        if (initialInput) {
+            initialInput.checked = true;
+            setActiveLabel(initialInput.id);
+            applySort(initialInput.value);
+        }
 
         sortOptions.forEach(option => {
+            option.setAttribute('aria-controls', 'post-list');
             option.addEventListener('change', function () {
                 const sortType = this.value;
-                const articles = Array.from(postList.querySelectorAll('article'));
+                localStorage.setItem(STORAGE_KEY, sortType);
+                applySort(sortType);
+                setActiveLabel(this.id);
+            });
+        });
 
-                articles.sort((a, b) => {
-                    const dateA = parseInt(a.dataset.date);
-                    const dateB = parseInt(b.dataset.date);
-                    return sortType === 'newest' ? dateB - dateA : dateA - dateB;
-                });
-
-                // 重新排列 DOM 元素
-                articles.forEach(article => {
-                    postList.appendChild(article);
-                });
+        // 为 label 添加键盘支持和无障碍属性
+        labels.forEach(lbl => {
+            lbl.setAttribute('tabindex', '0');
+            if (!lbl.hasAttribute('aria-pressed')) lbl.setAttribute('aria-pressed', 'false');
+            lbl.addEventListener('keydown', (e) => {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    const forId = lbl.getAttribute('for');
+                    const input = document.getElementById(forId);
+                    if (input) {
+                        input.checked = true;
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                        input.focus();
+                    }
+                }
             });
         });
     });
