@@ -80,7 +80,6 @@ layout: default
             try {
                 window.localStorage.setItem(STORAGE_KEY, value);
             } catch (err) {
-                // localStorage 在某些隐私模式下不可用，忽略即可
             }
         }
 
@@ -104,18 +103,15 @@ layout: default
                 const dateB = parseInt(b.dataset.date, 10);
                 const dateDiff = sortType === 'newest' ? dateB - dateA : dateA - dateB;
                 if (dateDiff !== 0) return dateDiff;
-                // 同日期时用链接做次级排序，保证顺序稳定
                 const linkA = a.querySelector('a')?.getAttribute('href') || '';
                 const linkB = b.querySelector('a')?.getAttribute('href') || '';
                 return sortType === 'newest' ? linkB.localeCompare(linkA) : linkA.localeCompare(linkB);
             });
-            // 重新排列 DOM 元素（使用 DocumentFragment 减少重排）
             const frag = document.createDocumentFragment();
             articles.forEach(article => frag.appendChild(article));
             postList.appendChild(frag);
         }
 
-        // 初始化：优先使用 localStorage，否则默认按最早排序
         const saved = safeGetSort();
         const initialValue = saved || 'oldest';
         setActiveButton(initialValue);
