@@ -10,6 +10,8 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 
 
 ### 往期内容
+- 第110期：[GitHub历史增长最快的项目](_weekly/110.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/110.html)
+- 第109期：[被开源的Claude Code](_weekly/109.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/109.html)
 - 第108期：[Claude Code的终极优化方案](_weekly/108.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/108.html)
 - 第107期：[被OpenAI收购的AI安全工具](_weekly/107.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/107.html)
 - 第106期：[阿里的openclaw替代](_weekly/106.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/106.html)
