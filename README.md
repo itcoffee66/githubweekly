@@ -10,6 +10,11 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 
 
 ### 往期内容
+- 第115期：[桌面AI超级助理](_weekly/115.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/115.html)
+- 第114期：[DeepSeek V4的终端编程助手](_weekly/114.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/114.html)
+- 第113期：[AI终端工具Warp正式开源](_weekly/113.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/113.html)
+- 第112期：[DeepSeek V4终于来了](_weekly/112.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/112.html)
+- 第111期：[Karpathy经验提炼的Claude Code配置](_weekly/111.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/111.html)
 - 第110期：[GitHub历史增长最快的项目](_weekly/110.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/110.html)
 - 第109期：[被开源的Claude Code](_weekly/109.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/109.html)
 - 第108期：[Claude Code的终极优化方案](_weekly/108.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/108.html)
@@ -31,6 +36,5 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 使用 RSS 订阅软件可以快速知道本周 GitHub 热点项目
 
 订阅地址：[https://itcoffee66.github.io/githubweekly/feed.xml](https://itcoffee66.github.io/githubweekly/feed.xml)
-
 
 
