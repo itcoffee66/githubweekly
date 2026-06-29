@@ -10,6 +10,11 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 
 
 ### 往期内容
+- 第120期：[Agent视频生产系统](_weekly/120.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/120.html)
+- 第119期：[生产级Agent技能包](_weekly/119.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/119.html)
+- 第118期：[自托管AI工作空间](_weekly/118.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/118.html)
+- 第117期：[Claude Design的开源替代](_weekly/117.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/117.html)
+- 第116期：[AI Agent的记忆系统](_weekly/116.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/116.html)
 - 第115期：[桌面AI超级助理](_weekly/115.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/115.html)
 - 第114期：[DeepSeek V4的终端编程助手](_weekly/114.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/114.html)
 - 第113期：[AI终端工具Warp正式开源](_weekly/113.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/113.html)
@@ -26,7 +31,7 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 - 第102期：[全球爆火的AI助理真的那么好用吗？](_weekly/102.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/102.html)
 - 第101期：[IT咖啡馆的Github一周热点上线了](_weekly/101.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/101.html)
 - 第100期：[火爆的AI编程代理](_weekly/100.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/100.html)
-- 第99期：[提升Claude code效率10倍的工具？](_weeklu/99.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/99.html)
+- 第99期：[提升Claude code效率10倍的工具？](_weekly/99.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/99.html)
 - 第98期：[AI文档检索框架](_weekly/98.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/98.html)
 - 第97期：[自动操作手机的智能助手](_weekly/97.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/97.html)
 - 第96期：[FLUX发布了新一代，但似乎没那么惊艳了](_weekly/96.md) | [在线阅读](https://itcoffee66.github.io/githubweekly/96.html)

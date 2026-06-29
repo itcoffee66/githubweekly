@@ -21,5 +21,8 @@ Thumbs.db
 *.swp
 *.swo
 
+# 编辑器本地历史（VS Code Local History）
+.history/
+
 # 环境文件
 .env
