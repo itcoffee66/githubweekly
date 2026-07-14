@@ -10,6 +10,8 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 
 
 ### 往期内容
+- 第122期：[AI求职助手](_weekly/122.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/122.html)
+- 第121期：[DeepSeek推理加速](_weekly/121.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/121.html)
 - 第120期：[Agent视频生产系统](_weekly/120.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/120.html)
 - 第119期：[生产级Agent技能包](_weekly/119.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/119.html)
 - 第118期：[自托管AI工作空间](_weekly/118.md)  | [在线阅读](https://itcoffee66.github.io/githubweekly/118.html)
@@ -41,5 +43,4 @@ GitHub一周热点汇总，每周分享热门项目，B站、YouTube发布视频
 使用 RSS 订阅软件可以快速知道本周 GitHub 热点项目
 
 订阅地址：[https://itcoffee66.github.io/githubweekly/feed.xml](https://itcoffee66.github.io/githubweekly/feed.xml)
-
 
